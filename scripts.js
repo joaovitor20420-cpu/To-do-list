@@ -21,8 +21,9 @@ btnAddTask.addEventListener("click", () => {
             const emoji = document.createElement('span');
             emoji.textContent = "✅";
             taskElement.appendChild(emoji);
+        });
     
-});
+
 
 
     } else {
@@ -30,11 +31,4 @@ btnAddTask.addEventListener("click", () => {
     }
 });
 
-btnConcluir.addEventListener("click", () => {
-    
-        remove(btnConcluir);
-        const emoji = document.createElement('span');
-        emoji.textContent = "✅";
-        taskElement.appendChild(emoji);
-    
-});
+
