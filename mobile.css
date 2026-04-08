@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .new-task-container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        width: 100%;
+        border-radius: 14px;
+    }
+
+    .new-task-container input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+
+    #btn-add {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.05rem;
+    }
+
+    .task-container {
+        padding: 5px;
+        width: 100%;
+        max-height: 40vh;
+    }
+
+    .task {
+        padding: 14px 18px;
+        font-size: 1rem;
+        border-radius: 10px;
+        flex-direction: row; 
+        /* Mantemos em linha porque são poucas palavras e botões pequenos */
+        gap: 10px;
+    }
+
+    .btn-concluir, .btn-excluir {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
