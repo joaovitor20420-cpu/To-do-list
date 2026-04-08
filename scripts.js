@@ -3,10 +3,10 @@ const btnAddTask = document.querySelector("#btn-add");
 const taskContainer = document.querySelector("#task-container"); 
 const buttonRemove = document.querySelector("#button-remove");
 const tasksJson = localStorage.getItem("myTasks");
-const taskReverse = JSON.parse(tasksJson);
+
 
 let myTasks = JSON.parse(localStorage.getItem("myTasks")) || [];
-taskReverse.forEach(element => {
+myTasks.forEach(element => {
     const taskElement = document.createElement('p');
     taskElement.classList.add('task');
     taskElement.textContent = element;
@@ -39,6 +39,12 @@ taskReverse.forEach(element => {
 
         btnExcluir.addEventListener("click", () => {
             taskElement.remove();
+            const index = myTasks.indexOf(element);
+            if(index !== -1) {
+                myTasks.splice(index, 1);
+            }
+            const tasksJson = JSON.stringify(myTasks);
+            localStorage.setItem("myTasks", tasksJson);
         });
         
         
