@@ -18,11 +18,35 @@ btnAddTask.addEventListener("click", () => {
 
         btnConcluir.addEventListener("click", () => {
             btnConcluir.remove();
+            
             const emoji = document.createElement('span');
             emoji.textContent = "✅";
             taskElement.appendChild(emoji);
         });
-    
+        const btnExcluir = document.createElement('button');
+
+        btnExcluir.textContent = "Excluir";
+        btnExcluir.classList.add('btn-excluir');
+        taskElement.appendChild(btnExcluir);
+
+        taskElement.addEventListener("click", (e) => {
+            e.stopPropagation();
+            btnExcluir.style.display = "flex";
+            btnExcluir.style.backgroundColor = "#8b0606";
+            btnConcluir.style.display = "none";
+            
+
+            btnExcluir.addEventListener("click", () => {
+                taskElement.remove();
+            });
+            
+            
+        });
+
+        taskContainer.addEventListener("click", () => {
+            btnExcluir.style.display = "none";
+            btnConcluir.style.display = "flex";
+        });
 
 
 
